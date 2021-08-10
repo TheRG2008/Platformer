@@ -34,14 +34,14 @@ public class GameManager : MonoBehaviour
     }
     private void ShowChest (int coinCount)
     {
-        if (coinCount == 10 || coinCount == 50 || coinCount == 100)
-        {
-            _ShowChest();
-        }
-        //if (coinCount != 10 || coinCount != 50 || coinCount != 100) 
-        //    return;
-        //_ShowChest();
-        
+        //if (coinCount == 10 || coinCount == 50 || coinCount == 100)
+        //{
+        //    _ShowChest();
+        //}
+        if (coinCount != 2 && coinCount != 50 && coinCount != 100)
+            return;
+        _ShowChest();
+
     }
     private void _ShowChest()
     {
