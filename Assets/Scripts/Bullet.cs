@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour, IDisposable
     private void Awake()
     {
         _bulletSprite = GetComponent<SpriteRenderer>();
-        if (FindObjectOfType<Player>()._sprite.flipX == true)
+        if (FindObjectOfType<Player>().Sprite.flipX == true)
         {
             _bulletSprite.flipX = true;
             direction = direction * -1;
@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour, IDisposable
     void Update()
     { 
         transform.Translate(direction * Time.deltaTime);
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
     }
 
     

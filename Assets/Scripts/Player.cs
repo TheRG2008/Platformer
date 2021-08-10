@@ -12,9 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private bool isGun = false;
+    [SerializeField] private GameObject _shootText;
 
     private Rigidbody2D _rb;
-    public SpriteRenderer _sprite;
+    private SpriteRenderer _sprite;
     private Animator _anim;
     private int _playerObject;
     private int _groundObject;
@@ -24,7 +25,11 @@ public class Player : MonoBehaviour
     private float checkRadius = 0.5f;
     private bool _isKey = false;
     
-
+    public SpriteRenderer Sprite 
+    {
+        get => _sprite;
+        private set { }
+    }
     public int lifes
     {
         get => _lifes;
@@ -70,6 +75,7 @@ public class Player : MonoBehaviour
     
     private void Move()
     {
+        
         if (Input.GetButton("Horizontal"))
         {
             _anim.SetBool("shoot", false);
@@ -91,7 +97,7 @@ public class Player : MonoBehaviour
         {
             _anim.SetBool("jump", false);
         }
-        if (Input.GetButtonDown("Fire1") && isGun == true) 
+        if (Input.GetKeyDown(KeyCode.RightControl) && isGun == true) 
         {
             Fire();
         }
@@ -162,6 +168,7 @@ public class Player : MonoBehaviour
         {
             _soundManager.Play(Sound.PickLifes);
             isGun = true;
+            _shootText.SetActive(true);
             Destroy(other.gameObject);
         }
     }
