@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54529339242177860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0, z: 0}
+  m_LocalPosition: {x: 3.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4279494094345019056}
@@ -239,5 +239,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _soundManager: {fileID: 0}
-  _shootPoint: {fileID: 0}
-  _bullet: {fileID: 0}
+  _shootPoint: {fileID: 3869280593862550577}
+  _bullet: {fileID: 6928992611720168136, guid: 9fc455353eb6c8a4585337dad7f76f92, type: 3}
+  isGun: 0
+  _sprite: {fileID: 0}

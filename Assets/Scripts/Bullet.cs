@@ -24,14 +24,12 @@ public class Bullet : MonoBehaviour, IDisposable
             _bulletSprite.flipX = false;
     }
 
-    // Update is called once per frame
+    
     void Update()
     { 
         transform.Translate(direction * Time.deltaTime);
+        Destroy(gameObject, 2);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
+    
 }
