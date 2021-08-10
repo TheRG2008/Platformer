@@ -72,6 +72,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButton("Horizontal"))
         {
+            _anim.SetBool("shoot", false);
             _anim.SetBool("run", true);
             Run();
         }
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            _anim.SetBool("shoot", false);
             _anim.SetBool("jump", true);
             Jump();
         }
@@ -97,6 +99,7 @@ public class Player : MonoBehaviour
 
     private void Fire()
     {
+        _anim.SetBool("shoot", true);
         Instantiate(_bullet, _shootPoint.transform.position, Quaternion.identity);
     }
 
@@ -175,9 +178,5 @@ public class Player : MonoBehaviour
         }
     }
 
-
-
-
-
-
+   
 }
